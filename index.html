@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hemanta Regmi | DevOps Engineer</title>
+    <meta name="description"
+        content="Portfolio of Hemanta Regmi, a motivated DevOps Intern with experience in AWS, Jenkins, Docker, and Terraform.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="#" class="logo">Hemanta<span>.</span></a>
+            <nav class="navbar">
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact" class="btn-primary">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <p class="subtitle">Hello, I'm</p>
+                    <h1>Hemanta Regmi</h1>
+                    <h2 class="role">DevOps Engineer</h2>
+                    <p class="description">
+                        Motivated IT student with practical experience in DevOps practices, cloud infrastructure, and
+                        CI/CD automation. Skilled in AWS, Jenkins, Docker, and Terraform.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                        <a href="#projects" class="btn btn-secondary">View Work</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">Professional Summary</h2>
+                <div class="about-content">
+                    <p>
+                        Motivated and detail-oriented IT student with practical experience in DevOps practices,
+                        including CI/CD automation, cloud infrastructure, and Infrastructure as Code. Skilled in
+                        leveraging tools such as AWS, Jenkins, Docker, and Terraform to design efficient and scalable
+                        deployment workflows. Committed to driving operational excellence and continuous improvement in
+                        modern cloud and automation environments.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>DevOps Intern</h3>
+                                <span class="company">Verisk Nepal</span>
+                                <span class="date">Oct 2025 - Jan 2026</span>
+                            </div>
+                            <ul class="job-description">
+                                <li>Gained hands-on experience in Linux administration, shell scripting, networking, and
+                                    Git-based collaboration.</li>
+                                <li>Automated server provisioning, log backups, and network diagnostics using Bash
+                                    scripts and cron jobs.</li>
+                                <li>Worked with core AWS services (EC2, S3, IAM, VPC) to deploy secure and scalable web
+                                    architectures.</li>
+                                <li>Built CI/CD pipelines using Jenkins and GitHub Actions for automated build, test,
+                                    and deployment workflows.</li>
+                                <li>Implemented Infrastructure as Code (Terraform, CloudFormation), containerized apps
+                                    with Docker, and set up CloudWatch monitoring with alerting and dashboards.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>BloodX - Cloud-Native Blood Donation System</h3>
+                            <a href="https://github.com/repo" class="github-link"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p>Architected and deployed a highly available 3-tier AWS web application using Terraform with a
+                            secure VPC, public/private subnets, ALB, Auto Scaling Groups, and a private RDS database.
+                            Implemented a Jenkins and Docker-based CI/CD pipeline to automate container builds and
+                            pushes to Amazon ECR. Configured Prometheus and Grafana for real-time monitoring and
+                            visualization of system metrics.</p>
+                        <div class="tech-stack">
+                            <span>AWS (EC2, VPC, ALB, ASG, RDS, ECR,
+                                IAM)</span><span>Terraform</span><span>Jenkins</span><span>Docker</span><span>Prometheus</span><span>Grafana</span><span>Bash</span><span>Git</span>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card">
+                        <div class="project-header">
+                            <h3>AttendAI - Smart Attendance Management System</h3>
+                            <a href="https://github.com/repo" class="github-link"><i class="fab fa-github"></i></a>
+                        </div>
+                        <p>Designed and deployed a scalable 3-tier web application on AWS using Terraform and a K3s
+                            Kubernetes cluster, hosting microservices with a FastAPI back- end for facial recognition
+                            and a React.js frontend. Built a secure CI/CD pipeline with Jenkins to automate container
+                            builds, enforce code quality and security checks using SonarQube and Trivy, and manage
+                            seamless multi-environment deployments (Dev, Test, Prod) with Helm.</p>
+                        <div class="tech-stack">
+                            <span>AWS (EC2, VPC, Security
+                                Groups)</span><span>Terraform</span><span>Jenkins</span><span>Kubernetes</span><span>Helm</span><span>Docker</span><span>SonarQube</span><span>Trivy</span><span>Python</span><span>Bash</span><span>Git</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Cloud & Security</h3>
+                        <p>AWS (IAM, VPC, EC2, S3, ALB, ASG, RDS, ECR), Network Security (Subnets, Security Groups)</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Infrastructure as Code (IaC)</h3>
+                        <p>Terraform, CloudFormation (fundamentals)</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Platforms & Tools</h3>
+                        <p>Linux Administration, Git/GitHub, Docker, Kubernetes, Jenkins, SonarQube</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Monitoring & Observability</h3>
+                        <p>Prometheus, Grafana</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Scripting & Automation</h3>
+                        <p>Bash</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Soft Skills</h3>
+                        <p>Team Collaboration, Adaptability and Fast Learning, Critical Thinking, Time Management</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education" class="section">
+            <div class="container">
+                <div class="edu-cert-wrapper">
+                    <div class="education">
+                        <h2 class="section-title">Education</h2>
+                        <div class="edu-item">
+                            <h3>Bachelor in Information Technology</h3>
+                            <p class="institution">Patan Multiple Campus</p>
+                            <span class="date">2022-2026 (Expected)</span>
+                            <p class="coursework">Coursework: Cloud Computing, Network System Administration, Operating
+                                Systems, Information Security</p>
+                        </div>
+                    </div>
+                    <div class="certifications">
+                        <h2 class="section-title">Certifications</h2>
+                        <ul class="cert-list">
+                            <li>
+                                <i class="fas fa-certificate"></i>
+                                <span>Udemy Labs - Certified Kubernetes Administrator</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:hregmi2060@gmail.com">hregmi2060@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:9866717332">+977 9866717332</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Hattiban, Lalitpur</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/hemanta-regmi-14a6a0319/"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/HemantRegmi"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Hemanta Regmi. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
