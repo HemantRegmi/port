@@ -1,27 +1,40 @@
 :root {
-    --primary-color: #3b82f6;
-    --secondary-color: #60a5fa;
+    /* Neural & Defensible Palette */
+    --primary-color: #2563eb;
+    /* Accessible Blue */
+    --secondary-color: #475569;
+    /* Slate 600 */
+    --dark-bg: #ffffff;
+    /* White - Rejecting unnecessary dark mode per "boring design" default, or keeping dark but making it flat. Let's stick to the existing dark theme but make it flat and professional if the user prefers dark. BUT user said "Neutral color palettes". Dark mode is fine, but let's make it flat. */
+    /* Re-evaluating: The user has a dark theme. I will keep it but de-risk it. */
     --dark-bg: #0f172a;
+    /* Slate 900 */
     --card-bg: #1e293b;
-    --text-primary: #f8fafc;
+    /* Slate 800 */
+    --text-primary: #f1f5f9;
+    /* Slate 100 */
     --text-secondary: #94a3b8;
-    --accent: #22d3ee;
-    --container-width: 1100px;
-    --transition: all 0.3s ease;
+    /* Slate 400 */
+    --accent: #e2e8f0;
+    /* Slate 200 - Replacing Cyan with neutral */
+    --container-width: 900px;
+    /* Optimized for reading */
+    --transition: color 0.2s ease, background-color 0.2s ease;
+    /* Removing 'all' for performance */
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
     background-color: var(--dark-bg);
     color: var(--text-primary);
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -40,16 +53,15 @@ ul {
     list-style: none;
 }
 
-/* Header */
+/* Header - Flat, no blur */
 .header {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(15, 23, 42, 0.9);
-    backdrop-filter: blur(10px);
+    background-color: var(--dark-bg);
     z-index: 1000;
     padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #334155;
 }
 
 .header .container {
@@ -59,41 +71,45 @@ ul {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--text-primary);
 }
 
 .logo span {
-    color: var(--primary-color);
+    display: none;
+    /* Remove decorative dot color change */
 }
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 24px;
     align-items: center;
+    font-size: 0.95rem;
 }
 
 .nav-links a {
     font-weight: 500;
     color: var(--text-secondary);
-    transition: var(--transition);
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: var(--primary-color);
+    color: var(--text-primary);
 }
 
 .btn-primary {
     background-color: var(--primary-color);
     color: white !important;
-    padding: 10px 20px;
-    border-radius: 5px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;
 }
 
 .btn-primary:hover {
-    background-color: var(--secondary-color);
+    background-color: #1d4ed8;
+    /* Darker blue */
 }
 
 .hamburger {
@@ -101,9 +117,10 @@ ul {
     cursor: pointer;
 }
 
-/* Hero Section */
+/* Hero Section - No gradients */
 .hero {
-    height: 100vh;
+    min-height: 80vh;
+    /* Reduced from 100vh for density */
     display: flex;
     align-items: center;
     padding-top: 80px;
@@ -114,34 +131,35 @@ ul {
 }
 
 .subtitle {
-    color: var(--accent);
+    color: var(--primary-color);
     font-weight: 600;
-    margin-bottom: 10px;
-    font-size: 1.1rem;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
 }
 
 .hero h1 {
-    font-size: 4rem;
-    font-weight: 800;
+    font-size: 3.5rem;
+    font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 10px;
-    background: linear-gradient(to right, #fff, #94a3b8);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+    color: var(--text-primary);
+    /* Solid color */
 }
 
 .role {
-    font-size: 2rem;
+    font-size: 1.5rem;
     color: var(--text-secondary);
-    margin-bottom: 20px;
+    margin-bottom: 24px;
+    font-weight: 400;
 }
 
 .hero .description {
-    font-size: 1.1rem;
+    font-size: 1.125rem;
     color: var(--text-secondary);
-    margin-bottom: 30px;
-    max-width: 500px;
+    margin-bottom: 32px;
+    max-width: 600px;
 }
 
 .hero-btns {
@@ -168,29 +186,37 @@ ul {
 
 /* Sections Global */
 .section {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 .bg-light {
-    background-color: #162033;
+    background-color: transparent;
+    /* Removing alternating background for simplicity, or keeping it subtle. Let's keep it subtle but defined. */
+    background-color: #f8fafc;
+    /* Slate 50. If dark mode, this needs to be dark. */
+    background-color: var(--card-bg);
+    /* Reuse card bg for contrast if needed, or just keep transparent. */
+}
+
+/* Actually, let's remove bg-light distinct logic and just use spacing. Or use a very subtle diff. */
+.bg-light {
+    background-color: rgba(255, 255, 255, 0.02);
 }
 
 .section-title {
-    font-size: 2rem;
-    margin-bottom: 40px;
-    position: relative;
-    display: inline-block;
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 32px;
+    color: var(--text-primary);
+    border-bottom: 2px solid #334155;
+    padding-bottom: 12px;
+    display: block;
+    /* Full width border */
+    width: 100%;
 }
 
 .section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 60%;
-    height: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
+    display: none;
 }
 
 /* About */
@@ -200,70 +226,125 @@ ul {
     color: var(--text-secondary);
 }
 
-/* Experience */
+/* Experience & Projects (Merged) */
 .timeline {
     position: relative;
-    max-width: 800px;
+    max-width: 100%;
+    /* Full width */
 }
 
-.timeline-item {
-    background-color: var(--card-bg);
-    padding: 30px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    margin-bottom: 20px;
-}
-
-.timeline-header {
-    margin-bottom: 15px;
+.timeline-item,
+.project-card {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    border: none;
+    border-left: 2px solid #334155;
+    margin-bottom: 40px;
+    padding-left: 24px;
     display: flex;
     flex-direction: column;
 }
 
-.timeline-header h3 {
-    font-size: 1.3rem;
+.timeline-header,
+.project-header {
+    margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.timeline-header h3,
+.project-header h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--text-primary);
+    margin-bottom: 4px;
 }
 
 .timeline-header .company {
-    color: var(--accent);
+    color: var(--primary-color);
     font-weight: 500;
+    font-size: 1rem;
 }
 
 .timeline-header .date {
     color: var(--text-secondary);
-    font-size: 0.9rem;
-    margin-top: 5px;
+    font-size: 0.875rem;
+    margin-top: 2px;
+    font-family: monospace;
+    /* Developer vibe */
 }
 
-.job-description {
-    padding-left: 20px;
-}
-
-.job-description li {
-    list-style-type: disc;
-    margin-bottom: 8px;
+.job-description,
+.project-card p {
+    padding-left: 0;
+    margin-top: 12px;
+    font-size: 1rem;
     color: var(--text-secondary);
 }
 
-/* Projects */
+.job-description li {
+    list-style-type: none;
+    /* Custom bullet */
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 16px;
+}
+
+.job-description li::before {
+    content: "-";
+    position: absolute;
+    left: 0;
+    color: var(--secondary-color);
+}
+
+/* Projects specific cleanup if any remain */
 .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
 }
 
-.project-card {
-    background-color: var(--card-bg);
-    padding: 25px;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: var(--transition);
-}
-
+/* Remove hover effects */
 .project-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-color);
+    transform: none;
+    border-color: #334155;
+}
+
+.project-header {
+    display: block;
+    /* Reset flex if needed, but we used column above */
+}
+
+.github-link {
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    margin-top: 4px;
+    display: inline-block;
+}
+
+.github-link:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.tech-stack span {
+    background-color: #1e293b;
+    color: var(--text-secondary);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-family: monospace;
+    border: 1px solid #334155;
 }
 
 .project-header {
@@ -366,67 +447,64 @@ ul {
     color: var(--accent);
 }
 
-/* Contact */
+/* Contact - Simplified */
 .contact-content {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    background-color: var(--card-bg);
-    padding: 40px;
-    border-radius: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    max-width: 600px;
+    gap: 16px;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+    max-width: 100%;
 }
 
 .contact-item {
     display: flex;
     align-items: center;
-    gap: 20px;
-    font-size: 1.2rem;
+    gap: 12px;
+    font-size: 1rem;
     color: var(--text-secondary);
-    transition: var(--transition);
-    padding: 10px;
-    border-radius: 8px;
+    padding: 0;
+    background: none;
 }
 
 .contact-item:hover {
-    background-color: rgba(255, 255, 255, 0.03);
+    background-color: transparent;
     color: var(--text-primary);
-    transform: translateX(10px);
+    transform: none;
 }
 
 .contact-item i {
-    color: var(--primary-color);
-    font-size: 1.5rem;
-    width: 30px;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    width: 24px;
     text-align: center;
 }
 
 .social-links {
-    margin-top: 10px;
+    margin-top: 24px;
     display: flex;
-    gap: 25px;
-    padding-left: 10px;
+    gap: 16px;
+    padding-left: 0;
 }
 
 .social-links a {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: var(--text-secondary);
-    transition: var(--transition);
-    background-color: rgba(255, 255, 255, 0.05);
-    width: 50px;
-    height: 50px;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 50%;
 }
 
 .social-links a:hover {
-    color: white;
-    background-color: var(--primary-color);
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    color: var(--primary-color);
+    background-color: transparent;
+    transform: none;
+    box-shadow: none;
 }
 
 /* Footer */
